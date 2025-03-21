@@ -1,0 +1,6 @@
+demoqatest\settings\BaseTest.class
+demoqatest\pageElements\Url.class
+demoqatest\pageElements\CalendarData.class
+demoqatest\pageObjects\AuthorizationData.class
+demoqatest\test\DemoQaTest.class
+demoqatest\pageObjects\NegativeData.class
