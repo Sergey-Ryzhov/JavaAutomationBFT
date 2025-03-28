@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите сумму вклада: ");
-        int sum = scan.nextInt();
+        float sum = scan.nextInt();
         if (sum <= 0) {
             System.out.println("Вы ввели неверную сумму вклада: " + sum);
             scan.remove();
@@ -25,10 +25,20 @@ public class Main {
 
         float percent = 0.07f;
         float result = sum;
-
+        // Расчет с использованием for
+        System.out.println("\nРасчет с использованием for:");
         for (int depositTerm = 1; depositTerm <= month; depositTerm++) {
             result = result + (result * percent);
             System.out.println("После " + depositTerm + " месяцев сумма вклада составит " + result);
+        }
+        // Расчет с использованием while
+        result = sum;
+        int depositTerm = 1;
+        System.out.println("\nРасчет с использованием while:");
+        while (depositTerm <= month) {
+            result = result + (result * percent);
+            System.out.println("После " + depositTerm + " месяцев сумма вклада составит " + result);
+            depositTerm++;
         }
 
 
