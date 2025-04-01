@@ -5,22 +5,43 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         String[] array1 = new String[3];
-
-        array1[0]= "привет";
-        array1[1]= "ПОКА";
-        array1[2]= "гипербола";
+        array1[0] = "привет";
+        array1[1] = "ПОКА";
+        array1[2] = "гипербола";
 
         System.out.println(array1[0].toUpperCase());
         System.out.println(array1[1].toLowerCase());
         System.out.println(array1[2]);
-        StringBuilder stbuild = new StringBuilder(array1[1]);
-        stbuild.insert(1,' ');
-        stbuild.insert(3,' ');
+
+        StringBuilder stbuild = new StringBuilder();
+        for (int i = 0; i < array1.length; i++) {
+            String word = array1[i];
+            if (word.contains("О")) {
+                stbuild.append(word);
+                stbuild.insert(1, ' ');
+                stbuild.insert(3, ' ');
+            }
+        }
         System.out.println(stbuild);
+
     }
 }
+
+
+//    String[] array1 = new String[3];
+//
+//        array1[0]= "привет";
+//                array1[1]= "ПОКА";
+//                array1[2]= "гипербола";
+//
+//                System.out.println(array1[0].toUpperCase());
+//                System.out.println(array1[1].toLowerCase());
+//                System.out.println(array1[2]);
+//                StringBuilder stbuild = new StringBuilder(array1[1]);
+//                stbuild.insert(1,' ');
+//                stbuild.insert(3,' ');
+//                System.out.println(stbuild);
 //    Scanner scan = new Scanner(System.in);
 //        System.out.print("Введите сумму вклада: ");
 //    float sum = scan.nextInt();
