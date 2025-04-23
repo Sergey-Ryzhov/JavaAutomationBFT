@@ -17,6 +17,7 @@ public class BaseTest {
     @BeforeEach
     void setDriver (){
         setLocalDriver();
+            Selenide.open("https://ru.m.wikipedia.org");
     }
     @AfterEach
     void tearDown (){
