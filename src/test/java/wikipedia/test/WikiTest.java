@@ -20,6 +20,5 @@ public class WikiTest extends BaseTest {
                 .textCheck()
                 .textLogoCheck();
         sleep(5000);
-
     }
 }
