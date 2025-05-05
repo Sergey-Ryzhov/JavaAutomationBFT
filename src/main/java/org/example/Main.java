@@ -1,28 +1,38 @@
 package org.example;
 
-import java.util.Random;
+import com.mifmif.common.regex.util.Iterable;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int randomNumber = rand.nextInt(3);
-        System.out.println("Случайное число от 0 до 2: " + randomNumber);
+        List<Box> boxCollection = new ArrayList<>();
 
-        String[] array1 = new String[3];
-        array1[0] = "привет";
-        array1[1] = "ПОКА";
-        array1[2] = "гипербола";
-        switch (randomNumber) {
-            case 0:
-                System.out.println("Слово из массива: " + array1[0]);
-                break;
-            case 1:
-                System.out.println("Слово из массива: " + array1[1]);
-                break;
-            case 2:
-                System.out.println("Слово из массива: " + array1[2]);
-                break;
+        boxCollection.add(new Box(31, 24, 38));
+        boxCollection.add(new Box(19, 17, 12));
+        boxCollection.add(new Box(30.1, 10, 47));
+
+        List<Box> smallBoxes = new ArrayList<>();
+        List<Box> bigBoxes = new ArrayList<>();
+
+        Iterator<Box> iterator = boxCollection.iterator();
+        while(iterator.hasNext()) {
+            Box box = iterator.next();
+            if (box.getWidth() > 30) {
+                bigBoxes.add(box);
+            } else {
+                smallBoxes.add(box);
+            }
         }
 
+        System.out.println("Маленькие коробки:");
+        for (Box box : smallBoxes) {
+            System.out.println(box);
+        }
+
+        System.out.println("\nБольшие коробки:");
+        for (Box box : bigBoxes) {
+            System.out.println(box);
+        }
     }
 }
